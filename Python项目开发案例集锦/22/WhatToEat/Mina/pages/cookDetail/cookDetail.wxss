@@ -1,0 +1,24 @@
+.page{
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.weui-article__h1{
+    text-align:center;
+    padding-top: 20rpx;
+}
+.weui-cell{
+    color:#999;
+    font-size:13px;
+}
+.weui-article__p {
+    color:#999;
+    font-size:13px;
+    line-height:1.2;
+}
+
+.weui-footer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+

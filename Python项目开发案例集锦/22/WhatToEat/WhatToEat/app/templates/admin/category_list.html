@@ -1,0 +1,106 @@
+{% import "common/admin_page.html" as pg %}
+{% extends 'admin/admin.html' %}
+
+{% block content %}
+<!--内容-->
+<section class="content-header">
+    <h1>今天吃什么后台管理系统</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 菜系管理</a></li>
+        <li class="active">菜系列表</li>
+    </ol>
+</section>
+
+<section class="content" id="showcontent">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">菜系列表</h3>
+                    <div class="box-tools">
+                        <form role="form" method="get">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="name" class="form-control pull-right"
+                                   placeholder="请输入关键字...">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×
+                            </button>
+                            <h4><i class="icon fa fa-check"></i> 操作成功</h4>
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <th>编号</th>
+                            <th>名称</th>
+                            <th>排序</th>
+                            <th>添加时间</th>
+                            <th>操作事项</th>
+                        </tr>
+                        {% for v in page_data.items %}
+                        <tr>
+                            <td>{{ v.id }}</td>
+                            <td>{{ v.name }}</td>
+                            <td>{{ v.order_num }}</td>
+                            <td>{{ v.addtime }}</td>
+                            <td>
+                                <a href="{{ url_for('admin.category_edit', id=v.id ) }}" class="label label-success">编辑</a>
+                                <a href="javascript:;" class="label label-danger del" value="{{v.id}}">删除</a>
+                            </td>
+                        </tr>
+                        {%  endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box-footer clearfix">
+                    {{ pg.page(page_data,'admin.category_list') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--内容-->
+{% endblock %}
+
+{% block js %}
+ <script>
+    $(document).ready(function(){
+        $("#g-3").addClass("active");
+        $("#g-3-2").addClass("active");
+    });
+    // 删除操作
+    $('.del').click(function(){
+        var id = $(this).attr('value');
+        layer.confirm('确定删除',function(){
+             $.ajax({                                    // 使用Ajax异步提交
+                url: "{{ url_for('admin.category_del') }}",   // 提交到的URL
+                type: "GET",                            // 提交方式为GET
+                data:{id:id},// 传递参数
+                dataType: "json",                       // 数据类型为json
+                success: function (res) {               // 操作成功后执行逻辑
+                    if (res.status == 1) {
+                        layer.msg(res.message,{icon:1,time:2000},function(){
+                            window.location.reload();
+                        });
+                    } else {
+                        layer.msg(res.message,{icon:2,time:2000});   // 提示失败
+                    }
+                }
+            })
+        })
+    })
+
+</script>
+{% endblock %}

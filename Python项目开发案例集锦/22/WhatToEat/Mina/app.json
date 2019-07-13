@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/addFood/addFood",
+    "pages/cookbook/cookbook",
+    "pages/choose/choose",
+    "pages/map/map",
+    "pages/cookDetail/cookDetail",
+    "pages/pie/pie",
+    "pages/success/success"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "今天吃什么",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_home_line.png",
+        "selectedIconPath": "images/icon_home_fill.png",
+        "selectedColor": "#09BB07"
+      },
+      {
+        "pagePath": "pages/addFood/addFood",
+        "text": "添加美食",
+        "iconPath": "images/icon_add_line.png",
+        "selectedIconPath": "images/icon_add_fill.png",
+        "selectedColor": "#09BB07"
+      },
+      {
+        "pagePath": "pages/pie/pie",
+        "text": "统计",
+        "iconPath": "images/icon_user_line.png",
+        "selectedIconPath": "images/icon_user_fill.png",
+        "selectedColor": "#09BB07"
+      }
+    ]
+  }
+}

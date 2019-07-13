@@ -1,0 +1,23 @@
+page{
+    backgroud: red
+}
+.container{
+    padding-top:100rpx;
+}
+.weui-article__h1{
+    color:#E86721;
+    text-align:center;
+}
+
+.placeholder{
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    height: 2.3em;
+    line-height: 2.3em;
+}
+
+.choose_picture {
+  margin: 20rpx;
+  border-radius: 50%;
+}

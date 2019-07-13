@@ -1,0 +1,27 @@
+<view class="page">
+    <view class="container">
+        <view class="weui-article__h1">
+            今天吃{{food}}
+        </view>
+        <view class="choose">
+            <image  class="choose_picture" src="../../images/choose.png" mode="cover"></image>
+        </view>
+        <view class="weui-flex">
+        <view class="weui-flex__item">
+            <view class="placeholder">
+                <navigator url="../cookbook/cookbook?&food={{food}}" >
+                    <button class="weui-btn" style="background-color:#ff4f00" type="primary">亲自下厨</button>
+                </navigator>
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+            <navigator url="../map/map?query={{food}}&food={{food}}" >
+                <button class="weui-btn" style="background-color:#ff4f00" type="primary" bindtap="bindClickTap">大吃大喝
+                </button>
+            </navigator>
+            </view>
+        </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,38 @@
+<view class="container">
+  <view wx:if="{{pageStatus == 'done' }}">
+  <view wx:if="{{total}}">
+      <view class="result">
+    今天就吃{{food}}！为您找到{{total}}家可以品尝到{{food}}的地方：
+  </view>
+      <view class='weui-panel'>
+  <block wx:for="{{rests}}" wx:for-item="rest">
+    <view id="{{index}}" data-index="{{index}}" class="weui-panel" bindtap="bindViewTap">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-cell__text">
+            {{index + 1}}. {{rest.title}}
+          </view>
+          <view class="weui-media-box__desc">
+            {{rest.address}}
+          </view>
+          <view class="weui-media-box__desc">
+            {{rest.telephone}}
+          </view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+  </block>
+  </view>
+  </view>
+  <view wx:else>
+    <view class="result">
+    抱歉，附件没有{{food}}！
+  </view>
+  </view>
+  </view>
+</view>
+
+
+
+

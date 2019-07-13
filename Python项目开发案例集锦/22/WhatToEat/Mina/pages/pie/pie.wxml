@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<block wx:if="{{!loading}} ">
+  <view class="weui-panel">
+    <view class="weui-cell  weui-cell--access">
+      <view class="weui-cell__bd cavans-view">
+          <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+    <view wx:if="{{ec}}">
+      <view class="weui-btns">
+      <button class="weui-btn weui-btn--primary" bindtap='cleanData'>清空数据</button>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view>
+    暂无数据
+  </view>
+</block>
+

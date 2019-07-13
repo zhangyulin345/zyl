@@ -1,0 +1,5 @@
+<picker class="picker" bindchange="bindChange" value="{{Index}}"  range="{{Data}}" range-key="name">
+    <view >
+      当前选择：{{Data[Index].name}}
+    </view>
+</picker>
