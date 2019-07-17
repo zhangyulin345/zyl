@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: pyStrich
+Version: 0.8
+Summary: PyStrich is a Python module to generate 1D and 2D barcodes (Code 39, Code 128, DataMatrix, QRCode and EAN13). Forked from huBarcode.
+Home-page: http://method-b.uk/pystrich/
+Author: Michael Mulqueen
+Author-email: michael@mulqueen.me.uk
+License: Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Office/Business
